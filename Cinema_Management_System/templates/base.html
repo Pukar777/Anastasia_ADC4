@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <div class="card-panel indigo lighten-2">
+    <div class="card-panel">
+      <span class="blue-text text-darken-2">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          
+    <style>
+      {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: pink;
+        margin-top: none;
+      }
+
+      li {
+        float: right;
+        font: Arial;
+      }
+
+      li a {
+        display: block;
+
+        color: black;
+        text-align: center;
+        padding: 0px 0px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        color: grey;
+      }
+    </style>
+
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% if user.is_authenticated %}
+            <li><a href="/logout/">Logout</a></li>
+          {% else %}
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/signup/">Register</a></li>
+          {% endif %}
+            <li><a href="">Home</a></li>
+            <li><a href="/movie/">Movie</a></li>
+            <li><a href="/requestmovie/">Request Movie</a></li>
+        </ul>
+      </div>
+    </nav>
+    {%block content%}
+    {%endblock%}
+
+    </div>
+
+    </span>
+  </div>
+</head>
+<body>
+
+
+</body>
+</html>

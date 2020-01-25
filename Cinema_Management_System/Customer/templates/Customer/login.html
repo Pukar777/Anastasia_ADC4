@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	
+</head>
+<body>
+{%extends "customer/header.html"%}
+{%block content%}
+
+
+<div class="login-form">
+  
+  <form action="" method="POST">
+  	{%csrf_token%}
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder="password" />
+    <button type="submit" class="btn">Login</button>
+  </form>
+</div>
+
+<div>
+  {%for message in messages %}
+  <h3>{{message}}</h3>
+  {%endfor%}
+</div>
+{%endblock%}
+</body>
+</html>
