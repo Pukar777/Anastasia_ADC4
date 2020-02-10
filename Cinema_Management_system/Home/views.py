@@ -46,3 +46,15 @@ def get_data_queryset(query=None):
 
 def booking(request)
     return render(request, 'booking.html')
+
+def booking_save(request)
+    if(request.method == 'POST'):
+        get_all = request.'POST'
+        get_ticketcount = request.POST('ticketcount')
+        get_movietitle = request.POST('movietitle')
+        get_username = request.POST('username')
+        obj = Booking(Booking_ticketCount = get_ticketcount, )
+        obj.save()
+        return redirect('Home:index')
+    else:
+        return HttpResponse('Error saving the record')

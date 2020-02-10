@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Create Form </title>
+
+}
+</style>
+</head>
+<body>
+    <div class="row">
+            <h1> Bookings</h1>
+            <!--form start-->
+             <form class="form-container" method="POST" action="save">
+                {% csrf_token %}
+                <div>
+                    <label>No. of Ticket</label>
+                    <input type="text" name="ticketcount">
+                </div>
+                <div>
+                    <label>Movie Title</label>
+                    <input type="text" name="movietitle">
+                </div>
+                <div>
+                    <label>Username</label>
+                    <input type="text" name="username">
+                </div>
+                <button type='submit'>Submit</button>
+             </form>
+    </div>
+</body>
+</html>

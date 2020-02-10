@@ -10,4 +10,5 @@ urlpatterns = [
     path('uploadmovie/', views.Uploadmovie, name='uploadmovie'),
     path('listmovie/', views.Listmovie, name='list'),
     path('booking/', views.booking, name='book')
+    path('booking/save', views.booking_save, name='booking_save')
 ]
