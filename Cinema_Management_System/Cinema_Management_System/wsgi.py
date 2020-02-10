@@ -1,5 +1,5 @@
 """
-WSGI config for Cinema_Management_System project.
+WSGI config for Cinema_Management_system project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Cinema_Management_System.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Cinema_Management_system.settings')
 
 application = get_wsgi_application()

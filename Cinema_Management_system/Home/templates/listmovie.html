@@ -1,0 +1,95 @@
+{%extends "header.html"%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CMS</title>
+	
+</head>
+{%block content%}
+<body>
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+		p {
+	color: black;
+	line-height:1.5em;
+	font-size:14px;
+	margin: 0 0 15px 0;
+	text-shadow: 1px 1px 0 #fff;
+	font-family: Roboto;
+}
+
+a, a:visited {
+	color: black;
+	text-decoration: none;
+	outline: 0;
+}
+
+img, embed, object, video {
+	max-width: 100%
+}
+
+.shadow {
+	position: relative;
+	-moz-box-shadow: 0 14px 10px -10px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 14px 10px -10px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 14px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.first {
+	padding: 40px;
+	background-color: #C0C0C0;
+	margin-left: 3%;
+	margin-right: 1.5%;
+	margin-bottom: 50px;
+	float: left;
+	margin-top: 100px;
+}
+
+
+.btn1 {
+	background: none;
+	color: black;
+	border: 1px  solid black;
+	border-radius: 5px;
+	font-size: 13px;
+	margin-bottom: 15px;
+	margin-left: 5px;
+
+}
+	</style>
+	<form method="get" action="{% url 'Home:list' %}">
+		<input type="text" name="q" id="id_q" placeholder="Search">
+	</form>
+	{%if movies%}
+	{%for obj in movies%}
+		<div class="first">
+			<figure class="shadow"><a href="#" class="thumb"><img src="{{obj.Movie_image.url}}" height="400px" width="260px" alt="alt" /></a>
+				<figcaption> 
+					<a href="#"><h3 class="heading">{{obj.Movie_title}}</h3></a>
+					<p class="bioquote">Genre : {{obj.Movie_genre}}</p>
+					<p class="bioquote">Price : Rs.{{obj.Movie_price}}</p>
+					<button class="btn1">Book</button>
+				</figcaption>
+			</figure>
+		</div>
+	{%endfor%}
+
+	{%else%}
+
+	<h2>No result</h2>
+
+	{% endif %}
+   
+</body>
+{%endblock%}
+
+</html>
